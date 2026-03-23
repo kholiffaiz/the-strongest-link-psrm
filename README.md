@@ -59,8 +59,8 @@ Our mindset:          Humans = Strongest Link (with training) ✅
 
 ```bash
 # Clone the repository
-git clone https://github.com/kholiffaiz/the-strongest-link-ptsr.git
-cd the-strongest-link-ptsr
+git clone https://github.com/kholiffaiz/the-strongest-link-psrm.git
+cd the-strongest-link-psrm
 
 # Build
 go build -o the-strongest-link
@@ -87,7 +87,7 @@ docker run -p 3333:3333 the-strongest-link
 ## 🗂️ Architecture
 
 ```
-the-strongest-link-ptsr/
+the-strongest-link-psrm/
 ├── controllers/        # API route handlers
 ├── models/             # Database models (SQLite)
 ├── static/             # Frontend assets (JS, CSS)
