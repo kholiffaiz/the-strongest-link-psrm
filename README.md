@@ -1,67 +1,163 @@
-![gophish logo](https://raw.github.com/gophish/gophish/master/static/images/gophish_purple.png)
+# 🔐 The Strongest Link
+## People Security Risk Management (PTSR)
 
-Gophish
-=======
+> **Simulate. Educate. Strengthen the Human Layer.**
 
-[![Join the chat at https://gitter.im/gophish/gophish](https://badges.gitter.im/gophish/gophish.svg)](https://gitter.im/gophish/gophish?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+The Strongest Link is a **People Security Risk Management (PTSR)** platform built to help organizations identify, measure, and reduce human-factor security risks through realistic phishing simulations and security awareness campaigns.
 
-[![Build Status](https://travis-ci.org/gophish/gophish.svg?branch=master)](https://travis-ci.org/gophish/gophish) [![GoDoc](https://godoc.org/github.com/gophish/gophish?status.svg)](https://godoc.org/github.com/gophish/gophish)
+---
 
-Gophish: Open-Source Phishing Toolkit
+## 🤔 What Is PTSR?
 
-[Gophish](https://getgophish.com) is an open-source phishing toolkit designed for businesses and penetration testers. It provides the ability to quickly and easily setup and execute phishing engagements and security awareness training.
+In cybersecurity, the most sophisticated firewall can be bypassed by a single employee clicking the wrong link. **People are both the greatest vulnerability and the greatest asset** in any security posture.
 
-### Current Status
-**Update 2/19/2017**
+**The Strongest Link** addresses this by providing:
 
-Gophish version 0.2.1 binaries will be released soon! I am just fixing a few final bugs and then I will build the final binaries. 
+- 🎣 **Phishing Simulations** — Send realistic phishing emails to employees to test their vigilance
+- 📊 **Risk Scoring** — Track who clicked, who submitted credentials, who reported the email
+- 🎓 **Awareness Training** — Redirect susceptible users to training content automatically
+- 📈 **Campaign Analytics** — Measure improvement over time across teams and departments
+- 🔁 **Repeat Testing** — Run ongoing campaigns to build a security-aware culture
 
-### Install
+---
 
-Installation of Gophish is dead-simple - just download and extract the zip containing the [release for your system](https://github.com/gophish/gophish/releases/), and run the binary. Gophish has binary releases for Windows, Mac, and Linux platforms.
+## 💡 Why "The Strongest Link"?
 
-### Building From Source
-**If you are building from source, please note that Gophish requires Go v1.5 or above!**
+Security awareness programs traditionally focus on the *weakest* link. We believe every person in an organization *can become* the strongest line of defense — with the right education, practice, and feedback loop.
 
-To build Gophish from source, simply run ```go get github.com/gophish/gophish``` and ```cd``` into the project source directory. Then, run ```go build```. After this, you should have a binary called ```gophish``` in the current directory.
+```
+Traditional mindset:  Humans = Weakest Link  ❌
+Our mindset:          Humans = Strongest Link (with training) ✅
+```
+
+---
+
+## ✅ Key Features
+
+| Feature | Description |
+|---|---|
+| **Campaign Management** | Create and schedule phishing campaigns across groups |
+| **Email Templates** | Library of realistic phishing email templates |
+| **Landing Pages** | Convincing credential-capture pages for simulation |
+| **Sending Profiles** | Configure SMTP sending infrastructure |
+| **User Groups** | Organize targets by department, role, or risk level |
+| **Real-Time Dashboard** | Live tracking of opens, clicks, submissions, and reports |
+| **Results Export** | Download campaign results as CSV for reporting |
+| **REST API** | Full API for integration with SIEM, HRIS, or LMS systems |
+| **Webhooks** | Push events to external systems in real-time |
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Go 1.10+
+- Node.js & npm (for building frontend assets)
+
+### Build from Source
+
+```bash
+# Clone the repository
+git clone https://github.com/kholiffaiz/the-strongest-link-ptsr.git
+cd the-strongest-link-ptsr
+
+# Build
+go build -o the-strongest-link
+
+# Run
+./the-strongest-link
+```
+
+Access the dashboard at: `http://localhost:3333`
+
+Default credentials:
+- **Username:** `admin`
+- **Password:** *(generated on first run — check terminal output)*
 
 ### Docker
-You can also use Gophish via an unofficial Docker container [here](https://hub.docker.com/r/matteoggl/gophish/).
 
-### Setup
-After running the Gophish binary, open an Internet browser to http://localhost:3333 and login with the default username (admin) and password (gophish).
-
-### Documentation
-
-Documentation can be found on our [site](http://getgophish.com/documentation). Find something missing? Let us know by filing an issue!
-
-### Issues
-
-Find a bug? Want more features? Find something missing in the documentation? Let us know! Please don't hesitate to [file an issue](https://github.com/gophish/gophish/issues/new) and we'll get right on it.
-
-### License
+```bash
+docker build -t the-strongest-link .
+docker run -p 3333:3333 the-strongest-link
 ```
-Gophish - Open-Source Phishing Framework
 
-The MIT License (MIT)
+---
 
-Copyright (c) 2013 - 2017 Jordan Wright
+## 🗂️ Architecture
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software ("Gophish Community Edition") and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
 ```
+the-strongest-link-ptsr/
+├── controllers/        # API route handlers
+├── models/             # Database models (SQLite)
+├── static/             # Frontend assets (JS, CSS)
+├── templates/          # Go HTML templates
+├── db/                 # Database migrations
+├── mailer/             # Email sending engine
+├── webhook/            # Webhook dispatcher
+└── config.json         # Runtime configuration
+```
+
+---
+
+## ⚙️ Configuration
+
+Edit `config.json` before running:
+
+```json
+{
+  "admin_server": {
+    "listen_url": "0.0.0.0:3333",
+    "use_tls": false
+  },
+  "phish_server": {
+    "listen_url": "0.0.0.0:80",
+    "use_tls": false
+  },
+  "db_name": "sqlite3",
+  "db_path": "the-strongest-link.db",
+  "logging": {
+    "filename": ""
+  }
+}
+```
+
+---
+
+## 📡 REST API
+
+The Strongest Link exposes a full REST API for automation and integration.
+
+```bash
+# Authenticate
+curl -X POST http://localhost:3333/api/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"admin","password":"yourpassword"}'
+
+# List campaigns
+curl -H "Authorization: Bearer YOUR_API_KEY" \
+  http://localhost:3333/api/campaigns/
+```
+
+Full API documentation available at `/api/` on your running instance.
+
+---
+
+## 🔒 Security & Ethics
+
+> **⚠️ IMPORTANT:** This platform is intended **exclusively** for authorized security awareness testing within your own organization.
+
+- Only run campaigns against users/employees covered by organizational policy
+- Never use against external targets without explicit written authorization
+- Ensure compliance with local privacy laws (GDPR, PDPA, etc.)
+- Simulation-captured credentials should be deleted immediately after analysis
+
+---
+
+## 📄 License
+
+Distributed under the **MIT License**.
+
+---
+
+*The Strongest Link — because every person in your organization can be a security asset, not a liability.*
