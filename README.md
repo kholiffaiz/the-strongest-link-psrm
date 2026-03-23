@@ -1,13 +1,13 @@
 # 🔐 The Strongest Link
-## People Security Risk Management (PTSR)
+## People Security Risk Management (PSRM)
 
 > **Simulate. Educate. Strengthen the Human Layer.**
 
-The Strongest Link is a **People Security Risk Management (PTSR)** platform built to help organizations identify, measure, and reduce human-factor security risks through realistic phishing simulations and security awareness campaigns.
+The Strongest Link is a **People Security Risk Management (PSRM)** platform built to help organizations identify, measure, and reduce human-factor security risks through realistic phishing simulations and security awareness campaigns.
 
 ---
 
-## 🤔 What Is PTSR?
+## 🤔 What Is PSRM?
 
 In cybersecurity, the most sophisticated firewall can be bypassed by a single employee clicking the wrong link. **People are both the greatest vulnerability and the greatest asset** in any security posture.
 
